@@ -6,7 +6,7 @@ import simulation
 def plot_kde(data, cols, per, target, vline=False, lab=None):
     fig, ax = plt.subplots()
     for col in cols:
-        ax = sns.kdeplot(data[data[per] == col][target], shade=True, label=col)
+        ax = sns.kdeplot(data[data[per] == col][target], fill=True, label=col)
     sns.despine()
     ax.legend(frameon=False, fontsize='x-large')
     if vline:
@@ -33,7 +33,7 @@ def plotting(data, col1='w_avg_dice', col2='o_avg_dice', choice='strategy', tie=
     ax.plot([0, 0], [vertical[0], vertical[1]], c='black', lw=2, alpha=.5)
 
     leg = ax.legend(frameon=False, markerscale=5, fontsize='x-large', loc='upper right')
-    for lh in leg.legendHandles:
+    for lh in leg.legend_handles:
         lh.set_alpha(1)
 
     ls = [x.replace('_', ' ').replace('o', "Other players'").replace('w', 'Winner').replace('avg', 'average')

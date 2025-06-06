@@ -1,7 +1,7 @@
 import plot_analysis
 
 
-def main(n=100000, generate=False):
+def main(n=1000, generate=True):
     c = plot_analysis.simulation.main(n, generate)
 
     # plotting parameters:

@@ -22,7 +22,7 @@ def statistics(n):
     for i in range(n):
         print(f'Game {i}')
         # Results of game_on come as a dictionary and the actual world object
-        results, world = game_on.main(6, False)
+        results, world = game_on.main(6, False, process_dataframe=True, process_reg=False)
         output.loc[i, ] = results
         for p in world.players:
             goals[p.goal.type] += 1
